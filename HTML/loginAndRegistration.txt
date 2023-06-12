@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Virtua Login</title>
+  <style>
+    @font-face { 
+      font-family: Glitch; src: url('SdglitchdemoRegular-YzROj.ttf'); } 
+
+    h1 {
+      font-family: Glitch;
+      font-size: 100px;
+      width: 300px;
+      margin: 100px auto;
+      text-align: center;
+      background: linear-gradient(to right, red, violet, blue);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1c1c1c;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .container {
+      max-width: 400px;
+      margin: 100px auto;
+      background-color: #fff;
+      border-radius: 5px;
+      padding: 20px;
+      box-shadow: 0px 0px 10px rgba(171, 169, 169, 0.1);
+    }
+    
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      box-sizing: border-box; /* Add this property */
+    }
+    
+    input[type="submit"] {
+      background-color: #ff0000;
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      width: 100%;
+    }
+    
+    .form-toggle {
+      text-align: center;
+      margin-top: 20px;
+    }
+    
+    .form-toggle a {
+      color: #333;
+      text-decoration: none;
+    }
+    
+    .form-toggle a:hover {
+      text-decoration: underline;
+    }
+  </style>
+
+  <script>
+    function toggleForm() {
+      var loginForm = document.getElementById("login-form");
+      var registerForm = document.getElementById("register-form");
+      var toggleLink = document.getElementById("toggle-link");
+
+      if (loginForm.style.display === "none") {
+        loginForm.style.display = "block";
+        registerForm.style.display = "none";
+        toggleLink.innerHTML = "Don't have an account? Sign-in now";
+      } else {
+        loginForm.style.display = "none";
+        registerForm.style.display = "block";
+        toggleLink.innerHTML = "Already have an account? Login";
+      }
+    }
+  </script>
+
+</head>
+<body>
+  <h1>VIRTUA</h1>
+  <div class="container">
+    <form id="login-form" action="login.php" method="POST">
+      <h2>Login</h2>
+      <input type="text" name="username" placeholder="Username" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <input type="submit" value="Login">
+    </form>
+
+    <form id="register-form" action="register.php" method="POST" style="display: none;">
+      <h2>Register</h2>
+      <input type="text" name="username" placeholder="Username" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <input type="password" name="confirm-password" placeholder="Confirm Password" required>
+      <input type="submit" value="Register">
+    </form>
+
+    <div class="form-toggle">
+      <a id="toggle-link" href="#" onclick="toggleForm()">Don't have an account? Sign-up now</a>
+    </div>
+  </div>
+</body>
+</html>

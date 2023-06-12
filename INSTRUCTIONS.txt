@@ -1,0 +1,5 @@
+Hello Hanzen
+
+Ako na gumawa sa login at registration form for cspc223. I'll need you design the homepage
+
+And once you're done, send mo sakin via commit or add, etc. para ako na magcomplete
