@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Virtua Login</title>
+  <style>
+    @font-face { 
+      font-family: Glitch; src: url('SdglitchdemoRegular-YzROj.ttf'); } 
+
+    h1 {
+      font-family: Glitch;
+      font-size: 100px;
+      width: 300px;
+      margin: 100px auto;
+      text-align: center;
+      background: linear-gradient(to right, red, violet, blue);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-image:url('background3.png');
+      background-repeat: no-repeat;    
+      background-size:cover;
+      background-color: #000; 
+      margin: 0 auto;
+      padding: 0;
+    }
+    
+    .container {
+      max-width: 400px;
+      margin: 100px auto;
+      background-color: rgba(0, 0, 0, .4);
+      border-radius: 10px;
+      border: 2px solid #fff;
+      padding: 20px;
+      margin-top: 0px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    }
+	
+    
+    
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #fff;
+   
+    }
+
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      background-color: #000;
+      border: 1px solid #fff;
+      border-radius: 3px;
+      box-sizing: border-box;
+    }
+    
+    input[type="submit"] {
+      background-color: #ff0000;
+      color: #fff;
+      padding: 10px 15px;
+      border: 1px solid #fff;
+      border-radius: 3px;
+      cursor: pointer;
+      width: 100%;
+    }
+    
+    .form-toggle {
+      text-align: center;
+      margin-top: 20px;
+    }
+    
+    .form-toggle a {
+      color: #fff;
+      text-decoration: none;
+    }
+    
+    .form-toggle a:hover {
+      text-decoration: underline;
+    }
+    #copyright {
+    font-family: Arial, sans-serif;
+    color: rgba(255, 255, 255, 0.5);
+    margin-left:10px;
+    margin-top: 200px;
+    margin-bottom: -300px;
+    }
+  </style>
+  <script>
+    function toggleForm() {
+      var loginForm = document.getElementById("login-form");
+      var registerForm = document.getElementById("register-form");
+      var toggleLink = document.getElementById("toggle-link");
+
+      if (loginForm.style.display === "none") {
+        loginForm.style.display = "block";
+        registerForm.style.display = "none";
+        toggleLink.innerHTML = "Don't have an account? Register";
+      } else {
+        loginForm.style.display = "none";
+        registerForm.style.display = "block";
+        toggleLink.innerHTML = "Already have an account? Login";
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1></h1>
+<img src="logo.gif" alt="Logo" 
+     width=854px
+     height=480px
+     style="margin: auto; margin-left: 515px; margin-top: -150px;"
+/>
+  
+  <div class="container">
+    <form id="login-form" action="login.php" method="POST">
+      <h2>Login</h2>
+      <input type="text" name="username" placeholder="Username" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <input type="submit" value="Login">
+    </form>
+    
+    <form id="register-form" action="register.php" method="POST" style="display: none;">
+      <h2>Register</h2>
+      <input type="text" name="username" placeholder="Username" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <input type="password" name="confirm-password" placeholder="Confirm Password" required>
+      <input type="submit" value="Register">
+    </form>
+
+    <div class="form-toggle">
+      <a id="toggle-link" href="#" onclick="toggleForm()">Don't have an account? Register.</a>
+    </div>
+  </div>
+  <p id="copyright">Website by MunozAndRobles - 2023</p>
+
+</body>
+</html>
